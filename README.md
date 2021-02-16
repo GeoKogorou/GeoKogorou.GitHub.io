@@ -1,0 +1,1 @@
+# GeoKogorou.github.io
