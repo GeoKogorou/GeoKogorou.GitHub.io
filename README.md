@@ -1,37 +1,46 @@
-## Welcome to GitHub Pages
+# ultralight
 
-You can use the [editor on GitHub](https://github.com/GeoKogorou/GeoKogorou.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+[![Build Status](https://travis-ci.org/kotet/ultralight.svg?branch=master)](https://travis-ci.org/kotet/ultralight)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![shot](https://user-images.githubusercontent.com/8435623/34344912-0665d490-ea2e-11e7-9bd8-919a6ced2a40.png)
 
-### Markdown
+Ultralight is super-lightweight responsive super Jekyll theme.
+It can be hosted on GitHub Pages/IPFS.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+[demo1](https://kotet.github.io/ultralight/)
 
-```markdown
-Syntax highlighted code block
+### Output size:
 
-# Header 1
-## Header 2
-### Header 3
+- [minima@affcd93](https://github.com/jekyll/minima/tree/affcd93be22e960afd2be08e6891d99b31bcf920): 256K
+- **[ultralight@9bffabb](https://github.com/kotet/ultralight/tree/9bffabb42cc64c0be563d5c3d3977ab6bb5761b9): 40K**
 
-- Bulleted
-- List
+### Pagespeed:
 
-1. Numbered
-2. List
+![screenshot from 2017-12-26 10-17-46](https://user-images.githubusercontent.com/8435623/34344205-7f316c3e-ea26-11e7-8fcb-1184ee929c8d.png)
 
-**Bold** and _Italic_ and `Code` text
+## Usage
 
-[Link](url) and ![Image](src)
+### GitHub Pages
+
+```console
+$ git clone https://github.com/kotet/ultralight.git && cd ultralight
+$ git remote set-url origin https://github.com/yourname/yourname.github.io.git
+$ git push origin master
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+### IPFS
 
-### Jekyll Themes
+```console
+$ git clone https://github.com/kotet/ultralight.git && cd ultralight
+$ bundle && bundle exec jekyll build
+$ ipfs add -r _site/
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/GeoKogorou/GeoKogorou.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+#### Internal link
 
-### Support or Contact
+On IPFS, all internal links must be relative links.
+You can use `relative` template like this:
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+```
+[link]({% include relative %}{% post_url your-article-filename %})
+```
